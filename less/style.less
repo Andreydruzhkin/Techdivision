@@ -1,0 +1,664 @@
+// Подключили шрифты через fonts.google.com, всегда в верху
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+// это переменные @main-text, @black, @lightgrey - можно в дальнейшем использовать во всём проекте
+@main-text: 'Raleway', sans-serif;
+@black: black;
+@lightgrey: #f2f4f6;
+
+// Прикрепить шрифт через переменную на сайт
+body {
+    font-family: @main-text;
+}
+
+// mixin
+.tt-up {
+    text-transform: uppercase;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+// mixin end
+
+.navbar-nav-left .nav-item .nav-link {
+    .tt-up;
+    .fs-14;
+    .fw-700;
+    color: @black;
+    // отступы как в макете
+    padding: 10px 25px;
+
+    @media (max-width: 992px) {
+        // в шапке надписи разместили к левому краю
+        padding-left: 0;
+    }
+
+    // отступы для иконок
+    i {
+        margin: 0 15px 0 0;
+    }
+}
+
+.search-form-container {
+    // фон где поиск
+    background-color: @lightgrey;
+    // внутренний отступ где поиск
+    padding: 15px 0;
+
+    .container {
+        // собрать эл-ты в кучу
+        position: relative;
+    }
+}
+
+// Надпись под шапкой
+.search-form-text {
+    // вытащили поиск из блока
+    position: absolute;
+    // чтобы поиск центрировался по вертикали и горизонтали
+    top: 50%;
+    left: 50%;
+    // лайфхак, позволяет передвинуть надпись "Kostenloser" на половину своей ширины и длины
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 992px) {
+        // убираем позицию абсолют
+        position: static;
+        // так пишется
+        transform: none;
+    }
+}
+
+.search-form {
+    text-align: right;
+    // чтобы кнопку поиск передвинуть в поиск
+    position: relative;
+
+    @media (max-width: 992px) {
+        // надпись к левому краю
+        text-align: left;
+    }
+}
+
+.search-form-input-text {
+    // внутренний отступ от надписи "Suche"
+    padding: 16px 10px;
+    font-size: 14px;
+    color: #272727;
+    // убрать синию рамочку в поиске, она появляется при наведении
+    outline: none;
+    // бордюр у рамочки, цвет как в макете
+    border: 1px solid #e5e5e5;
+    // увеличить рамку поиска
+    min-width: 240px;
+
+    @media (max-width: 992px) {
+        // поставить блок на всю ширину сайта
+        min-width: 100%;
+    }
+
+    // псевдокласс- это для стилизации надписи в рамочке, обязательно ::
+    &::placeholder {
+        // это прозрачность надписи внутри поиска
+        opacity: .5;
+    }
+}
+
+// кнопка поиск, берем из макета
+.search-form-submit {
+    // убрать фон у кнопки поиск
+    background-color: transparent;
+    background-image: url(../../img/search-icon.png);
+    // убрать границы у кнопки поиск
+    border: 0;
+    // убрать текст у кнопки
+    font-size: 0;
+    //ширина и высота кнопки, данные берем из макета 
+    width: 16px;
+    height: 16px;
+    //сделать блочно строчный эл-т
+    display: inline-block;
+    background-position: center;
+    // вместить кнопку в блок поиска
+    background-size: contain;
+    // убрать паттерн с картинки, пишем всегда
+    background-repeat: no-repeat;
+    padding: 0;
+    // для того чтобы кнопку втавить в поиск, выше указали position: relative 
+    position: absolute;
+    // подвинуть кнопку в рамку
+    top: 50%;
+    right: 10px;
+    // передвинуть кнопку по вертикали
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+.main {
+    display: grid;
+    // 1fr - верхний блок занимает мах высоту, а auto- подвал занимает сколько придется
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+// .wrapper {
+//     flex-grow: 1;
+// }
+
+.features-container {
+    display: grid;
+    // кол-во колонок с картинками
+    grid-template-columns: repeat(4, 1fr);
+    // отступы между картинками
+    grid-gap: 15px;
+
+
+    .features-item {
+        img {
+            // для того чтобы ужать картинки
+            width: 100%;
+            max-width: 320px;
+            // отступ между картинками
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 420px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.top-slider {
+    // отступы от карусели
+    margin: 50px 0 20px;
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+    }
+
+    // data-bs-target - мы ищем атрибут где есть название
+    .carousel-indicators [data-bs-target] {
+        background-color: black;
+        width: 12px;
+        height: 12px;
+        // делаем круглые кнопки
+        border-radius: 50%;
+        // расстояние между кнопками
+        margin: 0 10px;
+    }
+
+    .top-slider-text {
+        position: absolute;
+
+        z-index: 1;
+        top: 30%;
+        left: 15%;
+
+        @media (max-width: 576px) {
+            // подвинуть блок с кнопкой где слайдер
+           top: 25%;
+           left: 12%;
+        
+        }
+
+        // & - сокращенно top-slider-text-
+        &-heading {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 50px;
+
+            @media (max-width: 992px) {
+                // уменьшили текс и подвинуди
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            @media (max-width: 576px) {
+                font-size: 18px;
+                margin-bottom: 15px;
+             
+             }
+
+             @media (max-width: 400px) {
+                font-size: 14px;
+                margin-bottom: 10px;
+             }
+        }
+
+        .btn-slider {
+            color: black;
+            border: 3px solid;
+            padding: 20px 50px;
+            font-weight: 700;
+            .tt-up;
+
+            &:hover {
+                color: lighten (black);
+            }
+
+            @media (max-width: 992px) {
+                // уменьшили текст у кнопки и подвинули
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            @media (max-width: 576px) {
+               padding: 7px 14px;
+               font-size: 12px;
+            //    чтобы не очень жирная оконтовка была у кнопки
+               border: 2px solid;
+             }
+
+             @media (max-width: 400px) {
+                padding: 5px 10px;
+                font-size: 10px;
+             }
+        }
+    }
+}
+
+.section-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.category-sect {
+    padding-bottom: 100px;
+
+
+
+    .category-item {
+        position: relative;
+        text-align: center;
+        display: flex;
+        height: 220px;
+        align-items: flex-end;
+
+        @media (max-width: 992px) {
+            margin: 20px 0;
+            // чтобы заголовки были сверху, а кртинки снизу
+            flex-direction: column;
+            // текст по центру
+            align-items: center;
+            height: auto;
+            padding: 15px;
+        }
+
+        &-heading,
+        &-subheading {
+            margin: 0;
+            font-weight: 300;
+            text-transform: uppercase;
+            position: absolute;
+
+            @media (max-width: 992px) {
+                // убираем абсолют, чтбы поправить надписи
+               position: static;
+            }
+        }
+
+        &-heading {
+
+            color: #d7795f;
+            font-size: 26px;
+
+        }
+
+        &-subheading {
+            font-size: 14px;
+
+
+        }
+
+        &-img {
+            margin: 0 auto -35px;
+
+            @media (max-width: 992px) {
+                // меняем отступы у картинок когда они становятся в колонку
+                margin: 20px auto 0;
+            }
+        }
+    }
+}
+
+.ci-1 {
+    background-color: #ebdbe4;
+
+    .category-item-heading {
+        top: 35px;
+        left: 50px;
+    }
+
+    .category-item-subheading {
+        top: 70px;
+        left: 35px;
+    }
+}
+
+.ci-2 {
+    background-color: #ebe1db;
+
+    .category-item-heading {
+        top: 60px;
+        left: 165px;
+        
+        @media (max-width: 1280px) {
+            // подвинуть надписи где кртинки сверху
+            left: 122px;
+        }
+        
+    }
+
+    .category-item-subheading {
+        top: 40px;
+        left: 197px;
+
+        @media (max-width: 1280px) {
+            // подвинуть надписи где кртинки сверху
+            left: 150px;
+        }
+    }
+
+}
+
+.ci-3 {
+    background-color: #dbe5eb;
+
+    .category-item-heading, .category-item-subheading {
+        left: 0;
+        right: 0;
+    }
+    .category-item-heading {
+        top: 60px;
+    
+    }
+
+    .category-item-subheading {
+        top: 40px;
+    
+    }
+}
+
+.ci-4 {
+    background-color: #d2dccf;
+
+    .category-item-heading {
+        top: 35px;
+        left: 150px;
+
+        @media (max-width: 1280px) {
+            left: 120px;
+        }
+    }
+
+    .category-item-subheading {
+        top: 70px;
+        left: 190px;
+
+        @media (max-width: 1280px) {
+            left: 150px;
+        }
+    }
+}
+
+
+.product-sect {
+    // цвет фона блока
+    background-color: #f3f5f7;
+    padding-bottom: 200px;
+
+    .product-item {
+        background-color: white;
+        display: flex;
+        // блоки в колонку
+        flex-direction: column;
+        // блоки по центру
+        align-items: center;
+        // текст по центру
+        text-align: center;
+        margin: 15px 0;
+        padding: 0 45px 35px;
+        // чтобы можно было управлять плашкой
+        position: relative;
+
+        @media (max-width: 992px) {
+            // чтобы картинки встали на всю ширину экрана
+            width: 100%;
+        }
+
+        // это плашка
+        &-badge {
+            // чтобы блок становился на всю ширину доступную ему
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            // внутренние отступы у плашки
+            padding: 4px 6px;
+            color: white;
+            //    общий цвет для плашек, чтобы не был белый фон
+            background-color: gray;
+            // чтобы можно было управлять, в блок .product-item поставили position: relative;
+            position: absolute;
+            // выровнить плашку относительно картинки
+            top: 10px;
+
+            // цвет плашки sale
+            &-red {
+                background-color: #a7171a;
+                // цвет плашки Neu
+            }
+
+            &-green {
+                background-color: #56bcad;
+            }
+        }
+
+        &-img {
+            padding: 55px 0 20px;
+            border-bottom: 1px solid #eaeaea;
+            margin-bottom: 20px;
+            // черта снизу картинки 
+            min-width: 180px;
+            min-height: 245px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 1280px) {
+                // чтобы колонки не сливались,min-width: auto; - означает что минимальной ширины нет 
+                min-width: auto;
+                // ограничиваем ширину картинок, чтобы были одинаковые
+                max-width: 100px;
+            }
+        }
+
+        &-name,
+        &-price {
+            font-size: 12px;
+            margin: 8px 0;
+        }
+
+        &-price {
+            font-weight: 700;
+
+            &-old {
+                // цвет скидки
+                color: #858585;
+                // перечеркивание скидки
+                text-decoration: line-through;
+            }
+
+            //  цвет скидки
+            &-new {
+                color: #a7171a;
+            }
+        }
+
+        &-desc {
+            font-size: 12px;
+            color: #848484;
+        }
+    }
+}
+
+// слайдер с названиями
+.client-swiper {
+    padding: 60px 0;
+    // линия снизу
+    border-top: 1px solid #eaeaea;
+    // чтобы слайдер правильно уменьшался, 25px это padding
+    max-width: calc(100vw - 25px);
+
+    // чтобы картинки встали по центру
+    .swiper-slide {
+        text-align: center;
+    }
+
+    // изменть цвет у стрелок
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: gray;
+    }
+
+    // изменить цвет кнопок
+    .swiper-pagination-bullet-active {
+        background: gray;
+    }
+}
+
+.scroll-btn {
+    width: 45px;
+    height: 45px;
+    // лайфхак - картинка со стрелкой по центру
+    line-height: 45px;
+    background-color: #989898;
+    text-align: center;
+    // чтобы картинкп зафиксировалась в одном месте на экране
+    position: fixed;
+    bottom: 20px;
+    // самый правый край экрана
+    right: 0;
+    // при наведении появлялась рука
+    cursor: pointer;
+}
+
+footer {
+    .footer-line {
+        border-top: 1px solid #eaeaea;
+        padding: 50px 0;
+
+    }
+
+    .footer-phone {
+        display: flex;
+
+        .footer-phone-icon {
+            color: #666;
+            font-size: 30px;
+            // расстояние от иконки до текста
+            margin-right: 15px;
+            // выровнить именно данную иконку
+            align-self: flex-end;
+        }
+
+        .footer-phone-tel {
+            color: #686868;
+            font-size: 24px;
+            // убрать нижнее подчеркивание
+            text-decoration: none;
+
+        }
+
+        // убрать отступ между названием и номером
+        .footer-heading {
+            margin: 0;
+        }
+    }
+
+    .footer-heading {
+        font-size: 12px;
+        color: #686868;
+        font-weight: 600;
+        .tt-up;
+
+        @media (max-width: 768px) {
+            // отступы между блоками 
+            margin-top: 20px;
+        }
+    }
+
+    .footer-link {
+        font-size: 12px;
+        color: #686868;
+        text-decoration: none;
+    }
+
+
+    .footer-link-icon {
+        margin-right: 15px;
+    }
+
+    p.footer-line-p {
+        margin: 0 0 2px;
+    }
+
+    .newsletter-form {
+        // опустить ввод чуть ниже
+        margin-top: 10px;
+
+
+        .search-form-input-text {
+            // увеличить ввод внизу
+            min-width: 100%;
+        }
+
+        .newsletter-form .search-form-submit {
+            background-image: url(../../img/news-Icon.png);
+
+        }
+    }
+
+    .social-icons {
+        // кнопки ют, инс, фейс опустить ниже
+        margin-top: 35px;
+
+        a {
+            color: #7d7d7d;
+            // отступ между кнопками
+            margin-right: 20px;
+
+            // изменение цвета при наведении на иконку
+            &.social-icon-youtube:hover {
+                color: #ff0000;
+            }
+
+            &.social-icon-facebook:hover {
+                color: #4267b2;
+            }
+
+            &.social-icon-instagram:hover {
+                color: #405de6;
+            }
+        }
+    }
+}

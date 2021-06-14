@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключили bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- подключили с сайта fontawesome - чтобы можно было брать иконки -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- подключаем lightbox обязательно перед стилевым файлом -->
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <!-- подключаем swiper, перед стилевым -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Подключили Less -->
+    <link rel="stylesheet" href="less/dist/style.css">
+    <title>Techdivision Home page</title>
+</head>
+
+<body class="main">
+    <div class="wrapper">
+        <!-- шапка проекта -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Установка логотипа -->
+                <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-left">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">elektronik</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lebensmittel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Maschinenbau</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="far fa-user"></i> Mein Konto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Warenkorb</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-form-container">
+            <div class="container">
+                <p class="search-form-text">Kostenloser Versand – Kostenlose Rückgabe</p>
+                <form action="" class="search-form">
+                    <input type="text" class="search-form-input-text" placeholder="Suche">
+                    <input type="submit" class="search-form-submit">
+                </form>
+            </div>
+        </div>
+        <!-- кнопка на сайте -->
+        <!-- <a href="" class="btn btn-slider">Base button</a> -->
+
+
+        <div id="carouselExampleIndicators" class="carousel slide top-slider" data-bs-ride="carousel">
+            <!-- это индикаторы снизу карусели (полоски) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <!-- это сами слайды -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/Slide.png" class="d-block w-100" alt="...">
+                    <div class="top-slider-text">
+                        <p class="top-slider-text-heading">Kaffee Base</p>
+                        <a href="" class="btn btn-slider">Base button</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Slide.png" class="d-block w-100" alt="...">
+                    <div class="top-slider-text">
+                        <p class="top-slider-text-heading">Kaffee Base</p>
+                        <a href="" class="btn btn-slider">Base button</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Slide.png" class="d-block w-100" alt="...">
+                    <div class="top-slider-text">
+                        <p class="top-slider-text-heading">Kaffee Base</p>
+                        <a href="" class="btn btn-slider">Base button</a>
+                    </div>
+                </div>
+            </div>
+            <!-- это стрелки справа и слева -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <section class="category-sect"> 
+            <div class="container">
+                <div class="row">
+                    <!-- lg - чтобы колонки становились вниз начиная с экрана 992px -->
+                    <div class="col-lg-3">
+                        <div class="category-item ci-1">
+                            <p class="category-item-heading">kaffee</p>
+                            <p class="category-item-subheading">Base</p>
+                            <img src="img/category/category-1.png" class="category-item-img" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="category-item ci-2">
+                            <p class="category-item-heading">kakao</p>
+                            <p class="category-item-subheading">No. 1</p>
+                            <img src="img/category/category-2.png" class="category-item-img" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="category-item ci-3">
+                            <p class="category-item-heading">schokolade</p>
+                            <p class="category-item-subheading">TechDivision </p>
+                            <img src="img/category/category-3.png" class="category-item-img" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="category-item ci-4">
+                            <p class="category-item-heading">TEE</p>
+                            <p class="category-item-subheading">Base</p>
+                            <img src="img/category/category-4.png" class="category-item-img" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2 class="section-heading">Top Produkte</h2>
+        <section class="product-sect">
+            <div class="container">
+                <div class="row">
+                    <!--d-flex - 'это флекс' -->
+                    <div class="col-lg-3 d-flex">
+                        <div class="product-item">
+                            <div class="product-item-img">
+                                <!-- это jsQuery - фото на черном фоне -->
+                                <a href="img/product-1.png" data-lightbox="product">
+
+                                    <img src="img/product-1.png" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item-text">
+                                <p class="product-item-name">TechDivision Kakao</p>
+                                <p class="product-item-price">ab 2,95 €</p>
+                                <p class="product-item-desc">Inkl. 19% MwSt., zzgl. Versandkosten</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-flex">
+                        <div class="product-item">
+                            <!-- это плашка -->
+                            <div class="product-item-badge product-item-badge-red">
+                                Sale
+                            </div>
+                            <div class="product-item-img">
+                                <a href="img/product-2.png" data-lightbox="product">
+                                    <img src="img/product-2.png" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item-text">
+                                <p class="product-item-name">TechDivision Grüner Tee</p>
+                                <p class="product-item-price">
+                                    <span class="product-item-price-old">9,-</span>,
+                                    <span class="product-item-price-new">ab 6,95 €</span>
+                                </p>
+                                <p class="product-item-desc">Inkl. 19% MwSt., zzgl. Versandkosten
+                                    2,59 € / 1 kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-flex">
+                        <div class="product-item">
+                            <div class="product-item-badge product-item-badge-green">
+                                Neu
+                            </div>
+                            <div class="product-item-img">
+                                <a href="img/product-3.png" data-lightbox="product">
+                                    <img src="img/product-3.png" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item-text">
+                                <p class="product-item-name">TechDivision Kaffee</p>
+                                <p class="product-item-price">ab 9,95 €</p>
+                                <p class="product-item-desc">Inkl. 19% MwSt., zzgl. Versandkosten</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-flex">
+                        <div class="product-item">
+                            <div class="product-item-img">
+                                <a href="img/product-4.png" data-lightbox="product">
+                                    <img src="img/product-4.png" alt="">
+                                </a>
+                            </div>
+                            <div class="product-item-text">
+                                <p class="product-item-name">TechDivision Schokolade 125g</p>
+                                <p class="product-item-price">2,59 €</p>
+                                <p class="product-item-desc">Inkl. 19% MwSt., zzgl. Versandkosten
+                                    2,59 € / 1 kg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-sect">
+            <div class="container">
+                <div class="features-container">
+                    <div class="features-item">
+                        <img src="img/features/features-1.png" alt="">
+                        <p>Aufgewacht mit einer tollen Melodie in meinem Kopf – so packte ich meine Gitarre und spielte
+                            los.</p>
+                    </div>
+                    <div class="features-item">
+                        <img src="img/features/features-2.png" alt="">
+                        <p>Ich hielt den Atem an, als ich aus dem Fenster diese riesige Landschaft unter dem bewölkten
+                            Himmel sah.</p>
+                    </div>
+                    <div class="features-item">
+                        <img src="img/features/features-3.png" alt="">
+                        <p>Eines Tages packte ich meinen Koffer und begann meinen Traum wahr zu machen.</p>
+                    </div>
+                    <div class="features-item">
+                        <img src="img/features/features-4.png" alt="">
+                        <p>Ich fuhr an den Rand des Landes und wartete den ganzen Tag darauf den Sonnenuntergang zu
+                            sehen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="client-sect">
+        <div class="container">
+            <!-- Slider main container - главный контейнер -->
+            <div class="swiper-container client-swiper">
+                <!-- Additional required wrapper-чтобы совмещать слайды в один блок -->
+                <div class="swiper-wrapper">
+                    <!-- Slides - слайды -->
+                    <div class="swiper-slide"><img src="img/logo/Banderole.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/logo/Brand.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/logo/Marke.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/logo/Banderole.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/logo/Brand.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/logo/Marke.png" alt=""></div>
+                </div>
+                <!-- If we need pagination - точки под слайдером -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons - кнопки -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+        </div>
+    </section>
+   <!-- Кнопка поднятия сайта наверх -->
+    <div class="scroll-btn">
+        <!-- стрелочка из макета -->
+        <img src="img/scroll-Icon.png" alt="">
+    </div>
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="footer-line">
+            <div class="container">
+                <div class="row">
+                    <!--col-md - чтобы на маленьких экранах колонки складывадись в одну  -->
+                    <div class="col-md-4">
+                        <div class="footer-phone">
+                            <i class="fas fa-phone-alt footer-phone-icon"></i>
+                            <div class="footer-phone-text">
+                                <h4 class="footer-heading">
+                                    servise und hilfe
+                                </h4>
+                                <a href="tel:+4980312210550" class="footer-phone-tel">+49 8031 221 05 50</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="footer-heading">Fax</h4>
+                        <a href="" class="footer-link"><i class="fas fa-fax footer-link-icon"></i>+49 8031 2210 55
+                            22</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="footer-heading">ADRESSE</h4>
+                        <a href="" class="footer-link"><i class="fas fa-map-marker-alt footer-link-icon"></i></i>Karte
+                            zeigen</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="footer-heading">Schreiben Sie uns eine E-Mail</h4>
+                        <a href="mailto:info@techdivision.com" class="footer-link"><i
+                                class="fas fa-envelope footer-link-icon"></i>info@techdivision.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h4 class="footer-heading">base+shop</h4>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Unternehmen</a>
+                        </p>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Impressum</a>
+                        </p>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">News</a>
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="footer-heading">Rechtliches</h4>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">AGB</a>
+                        </p>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Datenschutz
+                            </a>
+                        </p>
+
+                    </div>
+                    <div class="col-md-5">
+                        <h4 class="footer-heading">Versand</h4>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Versandkosten</a>
+                        </p>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Widerrufsrecht/Garantie</a>
+                        </p>
+                        <p class="footer-link-p">
+                            <a href="" class="footer-link">Rückversand</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="footer-heading">Newsletter</h4>
+                        <form action="" class="search-form newsletter-form">
+                            <input type="text" class="search-form-input-text" placeholder="Ihre E-Mail Adresse">
+                            <input type="submit" class="search-form-submit">
+                        </form>
+                        <div class="social-icons">
+                            <a href="" class="social-icon-instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="" class="social-icon-facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="" class="social-icon-youtube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <!-- это подключаем JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--это подключаем Lightbox, прописываем от руки, обязательно после JQuery -->
+    <script src="js/lightbox.min.js"></script>
+    <!-- это подключаем swiper, копируем с сайта -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- обязательно в конце, подключаем скрипты, прописываем вручную -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
