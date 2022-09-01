@@ -5,26 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Подключили bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- подключили с сайта fontawesome - чтобы можно было брать иконки -->
     <link rel="stylesheet" href="css/all.min.css">
-    <!-- подключаем lightbox обязательно перед стилевым файлом -->
     <link rel="stylesheet" href="css/lightbox.min.css">
-    <!-- подключаем swiper, перед стилевым -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <!-- Подключили Less -->
     <link rel="stylesheet" href="less/dist/style.css">
     <title>Techdivision Home page</title>
 </head>
 
 <body class="main">
     <div class="wrapper">
-        <!-- шапка проекта -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <!-- Установка логотипа -->
                 <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -67,21 +60,15 @@
                 </form>
             </div>
         </div>
-        <!-- кнопка на сайте -->
-        <!-- <a href="" class="btn btn-slider">Base button</a> -->
-
-
         <div id="carouselExampleIndicators" class="carousel slide top-slider" data-bs-ride="carousel">
-            <!-- это индикаторы снизу карусели (полоски) -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
             </div>
-            <!-- это сами слайды -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="img/Slide.png" class="d-block w-100" alt="...">
@@ -105,7 +92,6 @@
                     </div>
                 </div>
             </div>
-            <!-- это стрелки справа и слева -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -121,7 +107,6 @@
         <section class="category-sect"> 
             <div class="container">
                 <div class="row">
-                    <!-- lg - чтобы колонки становились вниз начиная с экрана 992px -->
                     <div class="col-lg-3">
                         <div class="category-item ci-1">
                             <p class="category-item-heading">kaffee</p>
@@ -157,11 +142,9 @@
         <section class="product-sect">
             <div class="container">
                 <div class="row">
-                    <!--d-flex - 'это флекс' -->
                     <div class="col-lg-3 d-flex">
                         <div class="product-item">
-                            <div class="product-item-img">
-                                <!-- это jsQuery - фото на черном фоне -->
+                            <div class="product-item-img">                               
                                 <a href="img/product-1.png" data-lightbox="product">
 
                                     <img src="img/product-1.png" alt="">
@@ -258,10 +241,11 @@
             </div>
         </section>
     </div>
+
     <section class="client-sect">
         <div class="container">
             <!-- Slider main container - главный контейнер -->
-            <div class="swiper-container client-swiper">
+            <div class="swiper client-swiper">
                 <!-- Additional required wrapper-чтобы совмещать слайды в один блок -->
                 <div class="swiper-wrapper">
                     <!-- Slides - слайды -->
@@ -274,25 +258,21 @@
                 </div>
                 <!-- If we need pagination - точки под слайдером -->
                 <div class="swiper-pagination"></div>
-
+    
                 <!-- If we need navigation buttons - кнопки -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
+    
             </div>
         </div>
     </section>
-   <!-- Кнопка поднятия сайта наверх -->
     <div class="scroll-btn">
-        <!-- стрелочка из макета -->
         <img src="img/scroll-Icon.png" alt="">
     </div>
-    <!-- Подвал сайта -->
     <footer>
         <div class="footer-line">
             <div class="container">
                 <div class="row">
-                    <!--col-md - чтобы на маленьких экранах колонки складывадись в одну  -->
                     <div class="col-md-4">
                         <div class="footer-phone">
                             <i class="fas fa-phone-alt footer-phone-icon"></i>
@@ -379,21 +359,13 @@
             </div>
         </div>
     </footer>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
-    <!-- это подключаем JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!--это подключаем Lightbox, прописываем от руки, обязательно после JQuery -->
     <script src="js/lightbox.min.js"></script>
-    <!-- это подключаем swiper, копируем с сайта -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- обязательно в конце, подключаем скрипты, прописываем вручную -->
     <script src="js/scripts.js"></script>
 </body>
 

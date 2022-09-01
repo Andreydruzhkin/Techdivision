@@ -23,7 +23,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }
 
   return b.defaults = {
-    albumLabel: "Изображение %1 из %2",
+    albumLabel: "Фото %1 из %2",
     alwaysShowNavOnTouchDevices: !1,
     fadeDuration: 600,
     fitImagesInViewport: !0,
